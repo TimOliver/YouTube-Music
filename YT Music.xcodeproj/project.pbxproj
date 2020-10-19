@@ -70,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		226E1FF6253DC8B400E4AFD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
+				281CB55520F516100050D26D /* silence.mp3 */,
+				286AD73E20D9061400B2F45F /* custom.css */,
+				2802617820EE71C6001FDDCC /* observer.js */,
+				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2802617420EE6260001FDDCC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,15 +92,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		2802617520EE6271001FDDCC /* Supporting Files */ = {
+		2802617520EE6271001FDDCC /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				281CB55520F516100050D26D /* silence.mp3 */,
-				286AD73E20D9061400B2F45F /* custom.css */,
-				2802617820EE71C6001FDDCC /* observer.js */,
-				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
+				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
+				28DA92BE20D9016A004B2A6D /* Info.plist */,
 			);
-			path = "Supporting Files";
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 		281F979A20E958C00033D930 /* Views */ = {
@@ -122,13 +132,11 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
-				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
-				2802617520EE6271001FDDCC /* Supporting Files */,
-				281F979A20E958C00033D930 /* Views */,
-				2802617420EE6260001FDDCC /* Controllers */,
 				28DA92B520D90169004B2A6D /* AppDelegate.swift */,
-				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
-				28DA92BE20D9016A004B2A6D /* Info.plist */,
+				2802617420EE6260001FDDCC /* Controllers */,
+				226E1FF6253DC8B400E4AFD7 /* Resources */,
+				2802617520EE6271001FDDCC /* Supporting */,
+				281F979A20E958C00033D930 /* Views */,
 			);
 			path = "YT Music";
 			sourceTree = "<group>";
@@ -407,7 +415,7 @@
 					"$(PROJECT_DIR)/YT\\ Music",
 					"$(PROJECT_DIR)/YT\\ Music",
 				);
-				INFOPLIST_FILE = "YT Music/Info.plist";
+				INFOPLIST_FILE = "YT Music/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -435,7 +443,7 @@
 					"$(PROJECT_DIR)/YT\\ Music",
 					"$(PROJECT_DIR)/YT\\ Music",
 				);
-				INFOPLIST_FILE = "YT Music/Info.plist";
+				INFOPLIST_FILE = "YT Music/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
