@@ -12,8 +12,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     lazy var mainWindowController: NSWindowController? = {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        return storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("main")) as? NSWindowController
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateController(withIdentifier: "main") as? NSWindowController
     }()
     
     lazy var dockMenu: NSMenu = {
@@ -32,12 +32,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        DevMateKit.sendTrackingReport(nil, delegate: nil)
-        
         mainWindowController?.window?.isExcludedFromWindowsMenu = true
         mainWindowController?.showWindow(self)
         mainWindowController?.window?.makeKeyAndOrderFront(self)
-
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
