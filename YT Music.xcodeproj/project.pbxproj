@@ -73,11 +73,11 @@
 		226E1FF6253DC8B400E4AFD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
 				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
 				281CB55520F516100050D26D /* silence.mp3 */,
 				286AD73E20D9061400B2F45F /* custom.css */,
 				2802617820EE71C6001FDDCC /* observer.js */,
-				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -448,7 +448,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

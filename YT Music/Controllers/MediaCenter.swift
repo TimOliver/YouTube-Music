@@ -148,22 +148,19 @@ class MediaCenter: NSObject, WKScriptMessageHandler, NSUserNotificationCenterDel
         if components.count > 1 {
             info[MPMediaItemPropertyAlbumTitle] = components[1]
         }
-        
-        if #available(OSX 10.13.2, *) {
-            var artwork: MPMediaItemArtwork?
-            
-            if let image = image {
-                artwork = MPMediaItemArtwork(boundsSize: CGSize(width: 500, height: 500)) { (_) -> NSImage in
-                    return image
-                }
+
+        var artwork: MPMediaItemArtwork?
+
+        if let image = image {
+            artwork = MPMediaItemArtwork(boundsSize: CGSize(width: 500, height: 500)) { (_) -> NSImage in
+                return image
             }
-            
-            info[MPMediaItemPropertyArtwork] = artwork
         }
-        
+
+        info[MPMediaItemPropertyArtwork] = artwork
+
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
         MPNowPlayingInfoCenter.default().playbackState = isPlaying ? .playing : .paused
-        
     }
     
 }
