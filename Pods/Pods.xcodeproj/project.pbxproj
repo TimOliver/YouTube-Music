@@ -7,22 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B3DA109302B9B85320E7B48A560CFF4 /* MediaKeyTap-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B9F7F0DAA7D135A37C3274159B0214F /* MediaKeyTap-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1ACBB304B4AFA8DB6F98F231D43951D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA4C4071811133A2DD682423ADEFA7F /* Extensions.swift */; };
-		3673744732175BCB36A0CA905CBFF44C /* MediaKeyTapInternals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E6753AFE04A27EB269F90340DC050 /* MediaKeyTapInternals.swift */; };
-		458599ED2F0D4D3369717F91645CD2FC /* MediaKeyTap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7B35D22EFED62FE9E8CA500AAF487 /* MediaKeyTap-dummy.m */; };
-		4762CF337967CDF641820CC1B7E51002 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E756783E2E99C2537190D96EDA9704 /* CoreGraphics.framework */; };
-		58341A1124B0B8A90C9084E364EF0593 /* NSEventExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1168871CE33BF2E5170571B3F8FEBB /* NSEventExtensions.swift */; };
-		630CC1DA9C9D2C598876B5653DC65DCE /* MediaKeyTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F09946E54693603C8655EAFB5759479 /* MediaKeyTap.swift */; };
-		95F7389B04C60549D9A231528497EC61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B8E29603B434BED0523D9C8912E85C /* Cocoa.framework */; };
-		A85FBB899875C3125E44A2DF02258364 /* Pods-YT Music-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5372E69BBD56FF703F9ACA7185512905 /* Pods-YT Music-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B62B48497B8FCF036BA2B4F1CCEB5F9E /* Pods-YT Music-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 454CB5CFB7528E1B41D40E369BA12EC8 /* Pods-YT Music-dummy.m */; };
-		C6143E1814C23147600AF7FDD761ED38 /* MediaApplicationWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615890DA17CAAC62D11647C32202698 /* MediaApplicationWatcher.swift */; };
-		C932FE6C6FC57AF2B02D1A2F264D22DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B8E29603B434BED0523D9C8912E85C /* Cocoa.framework */; };
+		0E2288756B8DE728695A5D80CCC45C24 /* MediaKeyTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5087F8C67ABA1F28FEEF809FDB590B /* MediaKeyTap.swift */; };
+		155BB0D861E27BB931952A9EB20BC403 /* Pods-YT Music-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB1B495DB7A4BF28E0621FACD0A8E4 /* Pods-YT Music-dummy.m */; };
+		2D944FA918A776B2EE05610DA9A27D32 /* NSEventExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7131E01C662E445DB7D54A2AAA074 /* NSEventExtensions.swift */; };
+		7BCB0B1EBCD6666830B19FA45603F638 /* MediaKeyTap-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FB17982F3FFCB8A3828251A0A59F0DD /* MediaKeyTap-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8D8A4AD844E551C7280B75017CC5D912 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D34711BF95CF741FCDDAF72EC06D93 /* Extensions.swift */; };
+		A59CBE2EFE23B9D6EE54466FA2250875 /* Pods-YT Music-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7FD3082CC8F0F717BD798A3C86D0CD7 /* Pods-YT Music-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CF97C87F587203EEC7BAA434AE727FDE /* MediaApplicationWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193D9FD13362498AC0BFADE2FB1F368 /* MediaApplicationWatcher.swift */; };
+		E05E7F16B1665F788604DFDBAA9BD597 /* MediaKeyTap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BFD4912E88B9F7DF49686EC04165E9 /* MediaKeyTap-dummy.m */; };
+		F23E79272ACD5EF9400BED1E54FD85DF /* MediaKeyTapInternals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5B413EA53B8C1199933E3502ACC53 /* MediaKeyTapInternals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D50C3AA7786C3D474704EF8E6C0EC921 /* PBXContainerItemProxy */ = {
+		E721A3D7BFBED5DFBA0C7371AE862D55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -32,170 +29,148 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EFDA3D077A19169C65BEE4CBD7B61A5 /* MediaKeyTap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MediaKeyTap.debug.xcconfig; sourceTree = "<group>"; };
-		112CD36AD9026457B906CEC5B416DD2A /* Pods_YT_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YT_Music.framework; path = "Pods-YT Music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1226701C47BCC1B8C028175D61F765DD /* MediaKeyTap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MediaKeyTap.framework; path = MediaKeyTap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E1168871CE33BF2E5170571B3F8FEBB /* NSEventExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSEventExtensions.swift; path = MediaKeyTap/NSEventExtensions.swift; sourceTree = "<group>"; };
-		211A618079AC3ED6666E89AE90B25EFA /* Pods-YT Music-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YT Music-frameworks.sh"; sourceTree = "<group>"; };
-		35E0CEC68228BDC9DABCC9CD2FA89124 /* Pods-YT Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YT Music.release.xcconfig"; sourceTree = "<group>"; };
-		3D51DF717CE61AB8629EB8C8C1C803C3 /* MediaKeyTap.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MediaKeyTap.modulemap; sourceTree = "<group>"; };
-		443779ECC133E873355E323DCD2D931D /* MediaKeyTap-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MediaKeyTap-prefix.pch"; sourceTree = "<group>"; };
-		444E6753AFE04A27EB269F90340DC050 /* MediaKeyTapInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaKeyTapInternals.swift; path = MediaKeyTap/MediaKeyTapInternals.swift; sourceTree = "<group>"; };
-		454CB5CFB7528E1B41D40E369BA12EC8 /* Pods-YT Music-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YT Music-dummy.m"; sourceTree = "<group>"; };
-		4D93750DA2F8BAA7A75272C8BA2AA571 /* Pods-YT Music-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YT Music-acknowledgements.plist"; sourceTree = "<group>"; };
-		5372E69BBD56FF703F9ACA7185512905 /* Pods-YT Music-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YT Music-umbrella.h"; sourceTree = "<group>"; };
-		6F09946E54693603C8655EAFB5759479 /* MediaKeyTap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaKeyTap.swift; path = MediaKeyTap/MediaKeyTap.swift; sourceTree = "<group>"; };
-		859C650903549361F264806DFD1495B7 /* Pods-YT Music.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YT Music.modulemap"; sourceTree = "<group>"; };
-		8EA4C4071811133A2DD682423ADEFA7F /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = MediaKeyTap/Extensions.swift; sourceTree = "<group>"; };
-		944EA7A0C5D6CBE8C32AA0A3F7EE41DA /* Pods-YT Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YT Music.debug.xcconfig"; sourceTree = "<group>"; };
-		98B8E29603B434BED0523D9C8912E85C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		9AA7B35D22EFED62FE9E8CA500AAF487 /* MediaKeyTap-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MediaKeyTap-dummy.m"; sourceTree = "<group>"; };
-		9B9F7F0DAA7D135A37C3274159B0214F /* MediaKeyTap-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MediaKeyTap-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A524DBAFFB5132BE9686904754C8C305 /* MediaKeyTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MediaKeyTap.release.xcconfig; sourceTree = "<group>"; };
-		A615890DA17CAAC62D11647C32202698 /* MediaApplicationWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaApplicationWatcher.swift; path = MediaKeyTap/MediaApplicationWatcher.swift; sourceTree = "<group>"; };
-		C2E756783E2E99C2537190D96EDA9704 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		D65629C5091424089C4C4566E28DEC1A /* Pods-YT Music-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YT Music-Info.plist"; sourceTree = "<group>"; };
-		DDB4A08956C815DE6C02B5CC97B65F95 /* Pods-YT Music-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YT Music-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F48572FDE2A6577724CC4B811396B461 /* MediaKeyTap-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MediaKeyTap-Info.plist"; sourceTree = "<group>"; };
+		09FB1B495DB7A4BF28E0621FACD0A8E4 /* Pods-YT Music-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YT Music-dummy.m"; sourceTree = "<group>"; };
+		0C5087F8C67ABA1F28FEEF809FDB590B /* MediaKeyTap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaKeyTap.swift; path = MediaKeyTap/MediaKeyTap.swift; sourceTree = "<group>"; };
+		112CD36AD9026457B906CEC5B416DD2A /* libPods-YT Music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YT Music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1190FE2FFD3453247903EDB9630E5FC0 /* MediaKeyTap.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MediaKeyTap.modulemap; sourceTree = "<group>"; };
+		1226701C47BCC1B8C028175D61F765DD /* libMediaKeyTap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMediaKeyTap.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D34711BF95CF741FCDDAF72EC06D93 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = MediaKeyTap/Extensions.swift; sourceTree = "<group>"; };
+		1F11BFE08C7F12476CF55A997B16C0B3 /* Pods-YT Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YT Music.release.xcconfig"; sourceTree = "<group>"; };
+		2AA5B413EA53B8C1199933E3502ACC53 /* MediaKeyTapInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaKeyTapInternals.swift; path = MediaKeyTap/MediaKeyTapInternals.swift; sourceTree = "<group>"; };
+		2FB17982F3FFCB8A3828251A0A59F0DD /* MediaKeyTap-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MediaKeyTap-umbrella.h"; sourceTree = "<group>"; };
+		339B16D4B437B42FBC6D431D1D2AD44F /* Pods-YT Music-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YT Music-acknowledgements.plist"; sourceTree = "<group>"; };
+		5222FC212A8923E8DB8A11866EEF0AD7 /* Pods-YT Music-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YT Music-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6193D9FD13362498AC0BFADE2FB1F368 /* MediaApplicationWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaApplicationWatcher.swift; path = MediaKeyTap/MediaApplicationWatcher.swift; sourceTree = "<group>"; };
+		96BB89C6EF3594D2B7C56CDB62E3A2CE /* MediaKeyTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MediaKeyTap.release.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B6AFB9512C0FE0F798E0AA3A94D1D0A3 /* Pods-YT Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YT Music.debug.xcconfig"; sourceTree = "<group>"; };
+		C2BFD4912E88B9F7DF49686EC04165E9 /* MediaKeyTap-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MediaKeyTap-dummy.m"; sourceTree = "<group>"; };
+		CCCA9B18ED523EA95D6517F94B15C05D /* MediaKeyTap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MediaKeyTap.debug.xcconfig; sourceTree = "<group>"; };
+		DE021CD0DA917A53E7EC32C1AD3E82AD /* Pods-YT Music.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YT Music.modulemap"; sourceTree = "<group>"; };
+		E0A7131E01C662E445DB7D54A2AAA074 /* NSEventExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSEventExtensions.swift; path = MediaKeyTap/NSEventExtensions.swift; sourceTree = "<group>"; };
+		EFB89B028912DDEF940CDA5C8C060524 /* MediaKeyTap-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MediaKeyTap-prefix.pch"; sourceTree = "<group>"; };
+		F7FD3082CC8F0F717BD798A3C86D0CD7 /* Pods-YT Music-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YT Music-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1606833121EE46BD3305F1574FE84706 /* Frameworks */ = {
+		56C162729272F4E26471D2C591D9248F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F7389B04C60549D9A231528497EC61 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		959215751F9CE67F2597F78FD428B769 /* Frameworks */ = {
+		CA8DA7BE228B428245B0EBB6D857C766 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C932FE6C6FC57AF2B02D1A2F264D22DD /* Cocoa.framework in Frameworks */,
-				4762CF337967CDF641820CC1B7E51002 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089085FF4B602E65A43D023411F316DF /* Targets Support Files */ = {
+		108F5306B7560CBBADF5BB4D4C78FEFF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C903BC5B6EB04DC8B2F4A18977953ED9 /* Pods-YT Music */,
+				1226701C47BCC1B8C028175D61F765DD /* libMediaKeyTap.a */,
+				112CD36AD9026457B906CEC5B416DD2A /* libPods-YT Music.a */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		9872A3ED70B7F2C897BCDE6E3B54CB31 /* MediaKeyTap */ = {
+		5F906CE46316C623247B4165D2B1D977 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8EA4C4071811133A2DD682423ADEFA7F /* Extensions.swift */,
-				A615890DA17CAAC62D11647C32202698 /* MediaApplicationWatcher.swift */,
-				6F09946E54693603C8655EAFB5759479 /* MediaKeyTap.swift */,
-				444E6753AFE04A27EB269F90340DC050 /* MediaKeyTapInternals.swift */,
-				1E1168871CE33BF2E5170571B3F8FEBB /* NSEventExtensions.swift */,
-				ECA6759895358E54229CBB45EE0C6B1E /* Support Files */,
+				1190FE2FFD3453247903EDB9630E5FC0 /* MediaKeyTap.modulemap */,
+				C2BFD4912E88B9F7DF49686EC04165E9 /* MediaKeyTap-dummy.m */,
+				EFB89B028912DDEF940CDA5C8C060524 /* MediaKeyTap-prefix.pch */,
+				2FB17982F3FFCB8A3828251A0A59F0DD /* MediaKeyTap-umbrella.h */,
+				CCCA9B18ED523EA95D6517F94B15C05D /* MediaKeyTap.debug.xcconfig */,
+				96BB89C6EF3594D2B7C56CDB62E3A2CE /* MediaKeyTap.release.xcconfig */,
 			);
-			name = MediaKeyTap;
+			name = "Support Files";
+			path = "../Target Support Files/MediaKeyTap";
+			sourceTree = "<group>";
+		};
+		8DA2F6A6F032C9C49511A2B61B7893DF /* MediaKeyTap */ = {
+			isa = PBXGroup;
+			children = (
+				17D34711BF95CF741FCDDAF72EC06D93 /* Extensions.swift */,
+				6193D9FD13362498AC0BFADE2FB1F368 /* MediaApplicationWatcher.swift */,
+				0C5087F8C67ABA1F28FEEF809FDB590B /* MediaKeyTap.swift */,
+				2AA5B413EA53B8C1199933E3502ACC53 /* MediaKeyTapInternals.swift */,
+				E0A7131E01C662E445DB7D54A2AAA074 /* NSEventExtensions.swift */,
+				5F906CE46316C623247B4165D2B1D977 /* Support Files */,
+			);
 			path = MediaKeyTap;
 			sourceTree = "<group>";
 		};
 		A16388AC60B7F9BEBE515A28ABB848FD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9872A3ED70B7F2C897BCDE6E3B54CB31 /* MediaKeyTap */,
+				8DA2F6A6F032C9C49511A2B61B7893DF /* MediaKeyTap */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		C080C886C9E2F80D52E3E86A62E5B711 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C7984A6FC3CFCDCDF7233C1C237F3634 /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C7984A6FC3CFCDCDF7233C1C237F3634 /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				98B8E29603B434BED0523D9C8912E85C /* Cocoa.framework */,
-				C2E756783E2E99C2537190D96EDA9704 /* CoreGraphics.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-		C903BC5B6EB04DC8B2F4A18977953ED9 /* Pods-YT Music */ = {
-			isa = PBXGroup;
-			children = (
-				859C650903549361F264806DFD1495B7 /* Pods-YT Music.modulemap */,
-				DDB4A08956C815DE6C02B5CC97B65F95 /* Pods-YT Music-acknowledgements.markdown */,
-				4D93750DA2F8BAA7A75272C8BA2AA571 /* Pods-YT Music-acknowledgements.plist */,
-				454CB5CFB7528E1B41D40E369BA12EC8 /* Pods-YT Music-dummy.m */,
-				211A618079AC3ED6666E89AE90B25EFA /* Pods-YT Music-frameworks.sh */,
-				D65629C5091424089C4C4566E28DEC1A /* Pods-YT Music-Info.plist */,
-				5372E69BBD56FF703F9ACA7185512905 /* Pods-YT Music-umbrella.h */,
-				944EA7A0C5D6CBE8C32AA0A3F7EE41DA /* Pods-YT Music.debug.xcconfig */,
-				35E0CEC68228BDC9DABCC9CD2FA89124 /* Pods-YT Music.release.xcconfig */,
-			);
-			name = "Pods-YT Music";
-			path = "Target Support Files/Pods-YT Music";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				C080C886C9E2F80D52E3E86A62E5B711 /* Frameworks */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				A16388AC60B7F9BEBE515A28ABB848FD /* Pods */,
-				F8D61B08E78913A262A3C42E286D70F2 /* Products */,
-				089085FF4B602E65A43D023411F316DF /* Targets Support Files */,
+				108F5306B7560CBBADF5BB4D4C78FEFF /* Products */,
+				F72E78CD87EE4B309ABE2D58A798E869 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		ECA6759895358E54229CBB45EE0C6B1E /* Support Files */ = {
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D51DF717CE61AB8629EB8C8C1C803C3 /* MediaKeyTap.modulemap */,
-				9AA7B35D22EFED62FE9E8CA500AAF487 /* MediaKeyTap-dummy.m */,
-				F48572FDE2A6577724CC4B811396B461 /* MediaKeyTap-Info.plist */,
-				443779ECC133E873355E323DCD2D931D /* MediaKeyTap-prefix.pch */,
-				9B9F7F0DAA7D135A37C3274159B0214F /* MediaKeyTap-umbrella.h */,
-				0EFDA3D077A19169C65BEE4CBD7B61A5 /* MediaKeyTap.debug.xcconfig */,
-				A524DBAFFB5132BE9686904754C8C305 /* MediaKeyTap.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MediaKeyTap";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F8D61B08E78913A262A3C42E286D70F2 /* Products */ = {
+		E07240604E366246050A58923C048A9D /* Pods-YT Music */ = {
 			isa = PBXGroup;
 			children = (
-				1226701C47BCC1B8C028175D61F765DD /* MediaKeyTap.framework */,
-				112CD36AD9026457B906CEC5B416DD2A /* Pods_YT_Music.framework */,
+				DE021CD0DA917A53E7EC32C1AD3E82AD /* Pods-YT Music.modulemap */,
+				5222FC212A8923E8DB8A11866EEF0AD7 /* Pods-YT Music-acknowledgements.markdown */,
+				339B16D4B437B42FBC6D431D1D2AD44F /* Pods-YT Music-acknowledgements.plist */,
+				09FB1B495DB7A4BF28E0621FACD0A8E4 /* Pods-YT Music-dummy.m */,
+				F7FD3082CC8F0F717BD798A3C86D0CD7 /* Pods-YT Music-umbrella.h */,
+				B6AFB9512C0FE0F798E0AA3A94D1D0A3 /* Pods-YT Music.debug.xcconfig */,
+				1F11BFE08C7F12476CF55A997B16C0B3 /* Pods-YT Music.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-YT Music";
+			path = "Target Support Files/Pods-YT Music";
+			sourceTree = "<group>";
+		};
+		F72E78CD87EE4B309ABE2D58A798E869 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E07240604E366246050A58923C048A9D /* Pods-YT Music */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A22FD75EA969DDC9A273F678CEAF685E /* Headers */ = {
+		4AB0DEDE697D515698F959B34B04B936 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85FBB899875C3125E44A2DF02258364 /* Pods-YT Music-umbrella.h in Headers */,
+				7BCB0B1EBCD6666830B19FA45603F638 /* MediaKeyTap-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE2CE99D63B453B4E982F27376611A4B /* Headers */ = {
+		A3969A5E78CBC7FE7B36E4049E440FB0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3DA109302B9B85320E7B48A560CFF4 /* MediaKeyTap-umbrella.h in Headers */,
+				A59CBE2EFE23B9D6EE54466FA2250875 /* Pods-YT Music-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,12 +179,12 @@
 /* Begin PBXNativeTarget section */
 		F681C818218C8521A461769EA284D3EF /* MediaKeyTap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 34DA7A4ECF1A8CFC593A0C55F7851258 /* Build configuration list for PBXNativeTarget "MediaKeyTap" */;
+			buildConfigurationList = CE227941EBC7D75966481E92918EF54E /* Build configuration list for PBXNativeTarget "MediaKeyTap" */;
 			buildPhases = (
-				DE2CE99D63B453B4E982F27376611A4B /* Headers */,
-				8E0C7596FB383CBD4CE2C3AEBD065625 /* Sources */,
-				959215751F9CE67F2597F78FD428B769 /* Frameworks */,
-				06B2354047967BC4911221F0826933D2 /* Resources */,
+				4AB0DEDE697D515698F959B34B04B936 /* Headers */,
+				319EBEFA8289DE0959E55EDBB3BBDCC3 /* Sources */,
+				56C162729272F4E26471D2C591D9248F /* Frameworks */,
+				28DFD4E0D9E669AB9B6706883F8CAE96 /* Copy generated compatibility header */,
 			);
 			buildRules = (
 			);
@@ -217,27 +192,26 @@
 			);
 			name = MediaKeyTap;
 			productName = MediaKeyTap;
-			productReference = 1226701C47BCC1B8C028175D61F765DD /* MediaKeyTap.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 1226701C47BCC1B8C028175D61F765DD /* libMediaKeyTap.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		F924BA5A35396C760B79EE1C80D343E8 /* Pods-YT Music */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B4661406D6EDC55B5F65EC8CEB0F1A1A /* Build configuration list for PBXNativeTarget "Pods-YT Music" */;
+			buildConfigurationList = 20D20073A6A98D7A4E5DE676972DB1FB /* Build configuration list for PBXNativeTarget "Pods-YT Music" */;
 			buildPhases = (
-				A22FD75EA969DDC9A273F678CEAF685E /* Headers */,
-				4FF6228B3DB26F83CBA9EE5F7C39C6C1 /* Sources */,
-				1606833121EE46BD3305F1574FE84706 /* Frameworks */,
-				535978B620625987D11ECE3109E8D92B /* Resources */,
+				A3969A5E78CBC7FE7B36E4049E440FB0 /* Headers */,
+				FE1CDBFDE79A11777B003938EBD48580 /* Sources */,
+				CA8DA7BE228B428245B0EBB6D857C766 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D0FCFF690A6323AF9439C9F09F2331BF /* PBXTargetDependency */,
+				F9686583C005A3A68E0EA7F61ED70D2D /* PBXTargetDependency */,
 			);
 			name = "Pods-YT Music";
 			productName = "Pods-YT Music";
-			productReference = 112CD36AD9026457B906CEC5B416DD2A /* Pods_YT_Music.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 112CD36AD9026457B906CEC5B416DD2A /* libPods-YT Music.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -246,7 +220,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -257,7 +231,7 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F8D61B08E78913A262A3C42E286D70F2 /* Products */;
+			productRefGroup = 108F5306B7560CBBADF5BB4D4C78FEFF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -267,95 +241,67 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		06B2354047967BC4911221F0826933D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		28DFD4E0D9E669AB9B6706883F8CAE96 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		535978B620625987D11ECE3109E8D92B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/MediaKeyTap/MediaKeyTap.modulemap",
+				"${PODS_ROOT}/Headers/Public/MediaKeyTap/MediaKeyTap-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/MediaKeyTap-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MediaKeyTap/MediaKeyTap.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MediaKeyTap/MediaKeyTap-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4FF6228B3DB26F83CBA9EE5F7C39C6C1 /* Sources */ = {
+		319EBEFA8289DE0959E55EDBB3BBDCC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62B48497B8FCF036BA2B4F1CCEB5F9E /* Pods-YT Music-dummy.m in Sources */,
+				8D8A4AD844E551C7280B75017CC5D912 /* Extensions.swift in Sources */,
+				CF97C87F587203EEC7BAA434AE727FDE /* MediaApplicationWatcher.swift in Sources */,
+				E05E7F16B1665F788604DFDBAA9BD597 /* MediaKeyTap-dummy.m in Sources */,
+				0E2288756B8DE728695A5D80CCC45C24 /* MediaKeyTap.swift in Sources */,
+				F23E79272ACD5EF9400BED1E54FD85DF /* MediaKeyTapInternals.swift in Sources */,
+				2D944FA918A776B2EE05610DA9A27D32 /* NSEventExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E0C7596FB383CBD4CE2C3AEBD065625 /* Sources */ = {
+		FE1CDBFDE79A11777B003938EBD48580 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ACBB304B4AFA8DB6F98F231D43951D8 /* Extensions.swift in Sources */,
-				C6143E1814C23147600AF7FDD761ED38 /* MediaApplicationWatcher.swift in Sources */,
-				458599ED2F0D4D3369717F91645CD2FC /* MediaKeyTap-dummy.m in Sources */,
-				630CC1DA9C9D2C598876B5653DC65DCE /* MediaKeyTap.swift in Sources */,
-				3673744732175BCB36A0CA905CBFF44C /* MediaKeyTapInternals.swift in Sources */,
-				58341A1124B0B8A90C9084E364EF0593 /* NSEventExtensions.swift in Sources */,
+				155BB0D861E27BB931952A9EB20BC403 /* Pods-YT Music-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D0FCFF690A6323AF9439C9F09F2331BF /* PBXTargetDependency */ = {
+		F9686583C005A3A68E0EA7F61ED70D2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MediaKeyTap;
 			target = F681C818218C8521A461769EA284D3EF /* MediaKeyTap */;
-			targetProxy = D50C3AA7786C3D474704EF8E6C0EC921 /* PBXContainerItemProxy */;
+			targetProxy = E721A3D7BFBED5DFBA0C7371AE862D55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		199C0E3FA07BE4B39A7FDE0649100167 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35E0CEC68228BDC9DABCC9CD2FA89124 /* Pods-YT Music.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-YT Music/Pods-YT Music-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-YT Music/Pods-YT Music.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		29C906FE5FB7ACDC680C6CC289EFF96E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,44 +368,6 @@
 			};
 			name = Debug;
 		};
-		3E5B2DB781D77135F463C5EF9D4B4542 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 944EA7A0C5D6CBE8C32AA0A3F7EE41DA /* Pods-YT Music.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-YT Music/Pods-YT Music-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-YT Music/Pods-YT Music.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		59909D53159D0E69D82D4AF65B5E5706 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -522,86 +430,108 @@
 			};
 			name = Release;
 		};
-		60603F02AB1031AAEE04D2D4C7100219 /* Release */ = {
+		60BC13BDB187BC1E776A99279C33444A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A524DBAFFB5132BE9686904754C8C305 /* MediaKeyTap.release.xcconfig */;
+			baseConfigurationReference = 96BB89C6EF3594D2B7C56CDB62E3A2CE /* MediaKeyTap.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/MediaKeyTap/MediaKeyTap-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MediaKeyTap/MediaKeyTap-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/MediaKeyTap/MediaKeyTap.modulemap";
+				MODULEMAP_FILE = Headers/Public/MediaKeyTap/MediaKeyTap.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = MediaKeyTap;
 				PRODUCT_NAME = MediaKeyTap;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8BEB02BCD1D35F0C1EF72ED7FE0E683A /* Debug */ = {
+		67ED178954D86CF7BC782D9756F05EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EFDA3D077A19169C65BEE4CBD7B61A5 /* MediaKeyTap.debug.xcconfig */;
+			baseConfigurationReference = CCCA9B18ED523EA95D6517F94B15C05D /* MediaKeyTap.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/MediaKeyTap/MediaKeyTap-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MediaKeyTap/MediaKeyTap-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/MediaKeyTap/MediaKeyTap.modulemap";
+				MODULEMAP_FILE = Headers/Public/MediaKeyTap/MediaKeyTap.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = MediaKeyTap;
 				PRODUCT_NAME = MediaKeyTap;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		95ED8F339C6EE54890FD8EB1FA386CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F11BFE08C7F12476CF55A997B16C0B3 /* Pods-YT Music.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-YT Music/Pods-YT Music.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C5712A850B068958929B48AE43BDC044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6AFB9512C0FE0F798E0AA3A94D1D0A3 /* Pods-YT Music.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-YT Music/Pods-YT Music.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		34DA7A4ECF1A8CFC593A0C55F7851258 /* Build configuration list for PBXNativeTarget "MediaKeyTap" */ = {
+		20D20073A6A98D7A4E5DE676972DB1FB /* Build configuration list for PBXNativeTarget "Pods-YT Music" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BEB02BCD1D35F0C1EF72ED7FE0E683A /* Debug */,
-				60603F02AB1031AAEE04D2D4C7100219 /* Release */,
+				C5712A850B068958929B48AE43BDC044 /* Debug */,
+				95ED8F339C6EE54890FD8EB1FA386CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -615,11 +545,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B4661406D6EDC55B5F65EC8CEB0F1A1A /* Build configuration list for PBXNativeTarget "Pods-YT Music" */ = {
+		CE227941EBC7D75966481E92918EF54E /* Build configuration list for PBXNativeTarget "MediaKeyTap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E5B2DB781D77135F463C5EF9D4B4542 /* Debug */,
-				199C0E3FA07BE4B39A7FDE0649100167 /* Release */,
+				67ED178954D86CF7BC782D9756F05EEF /* Debug */,
+				60BC13BDB187BC1E776A99279C33444A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
