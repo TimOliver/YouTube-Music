@@ -31,7 +31,7 @@ class Fastfile: LaneFile {
     /// Runs a lane that goes takes a provided version number,
     /// updates the project files with that version number, and then
     /// builds, signs and releases a new copy of the app under that version
-	func releaseLane() {
+    func releaseLane() {
         desc("Build, sign, notarize and release a new version of YouTube Music")
 
         // Get the info we need from the environment
@@ -144,9 +144,13 @@ extension Fastfile {
 
     /// Create a temporary keychain to store the signing credentials
     func setUpKeychain() {
-
         // Delete the keychain if it already exists
-        deleteKeychain(name: keychainName)
+        let keychainURL = FileManager.default
+            .homeDirectoryForCurrentUser
+            .appendingPathComponent("Library/Keychains/\(keychainName)-db")
+        if FileManager.default.fileExists(atPath: keychainURL.path) {
+            deleteKeychain(name: keychainName)
+        }
 
         // Create the new keychain
         createKeychain(name: keychainName,
