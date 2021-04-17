@@ -51,6 +51,9 @@ class Fastfile: LaneFile {
         // Before we proceed, verify the new version provided is valid
         verifyNewVersion(newVersion, oldVersion: changelogChanges.previousVersion)
 
+        // Install any needed CocoaPods dependencies
+        cocoapods(cleanInstall: true, useBundleExec: true)
+
         // Make a temporary keychain to store our signing credentials
         setUpKeychain()
 
