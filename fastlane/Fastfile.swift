@@ -290,7 +290,7 @@ extension Fastfile {
 
         // Calculate the current date and convert to string
         let dateFormatter = DateFormatter()
-        dateFormatter.pattern = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: Date())
 
         // Insert the new release number under it
