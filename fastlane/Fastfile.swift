@@ -87,7 +87,7 @@ class Fastfile: LaneFile {
         let archiveName = "\(formattedAppName)-\(newVersion).zip"
 
         // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        echo(message: "::set-output name=release-name::\(archiveName)")
+        echo(message: "::set-output name=release-file-name::\(archiveName)")
 
         // Build the app (All of the build settings are in the project)
         buildMacApp(codesigningIdentity: environmentVariable(get: "CODESIGN_IDENTITY"),
