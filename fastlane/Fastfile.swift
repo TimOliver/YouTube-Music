@@ -95,7 +95,7 @@ class Fastfile: LaneFile {
         catch { fatalError("Unable to update Changelog \(error)") }
 
         // Commit all of the files we changed
-        gitCommit(path: ["YT Music/Supporting/Info.plist", "CHANGELOG.md"],
+        gitCommit(path: ["YT Music/Supporting/Info.plist", "CHANGELOG.md", "Appcast.xml"],
                   message: "Release version \(newVersion)! 🎉")
 
         // Make a tag for this release
@@ -106,7 +106,6 @@ class Fastfile: LaneFile {
 
         // Push GitHub Release
         setGithubRelease(repositoryName: "TimOliver/YouTube-Music",
-                         apiBearer: environmentVariable(get: "GITHUB_TOKEN"),
                          tagName: newVersion,
                          name: newVersion,
                          description: changelogChanges.changes,
