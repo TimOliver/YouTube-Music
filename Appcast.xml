@@ -3,18 +3,6 @@
     <channel>
         <title>YT Music</title>
         <item>
-            <title>Version 1.1.0</title>
-            <description>
-                <![CDATA[
-                <h3>Added</h3><ul><li>Added a new feature</li></ul><h3>Fixed</h3><ul><li>Fixed a found issue</li></ul><h3>Changed</h3><ul><li>Changed a previous feature</li></ul>
-                ]]>
-            </description>
-            <pubDate>Sat, 17 Apr 2021 08:25:05 +0000</pubDate>
-            <sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/TimOliver/YouTube-Music/releases/download/1.1.0/YT-Music-1.1.0.zip"
-            sparkle:version="8" sparkle:shortVersionString="1.1.0"
-            sparkle:edSignature="3UaN/iFXk/z1BhURRb95wPvW8NRj2l4j+eIBBse/eqceCwzaDHuQEvauAQkjejJvL1H0qjL3ltXkuXrEDSOcDg==" length="5657600"
-            type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
