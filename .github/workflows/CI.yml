@@ -28,7 +28,7 @@ jobs:
 
       # Execute fastlane release lane
       - name: Run Fastlane
-        run: bundle install && bundle fastlane swift init && bundle exec fastlane release --verbose
+        run: bundle install && bundle exec fastlane swift init && bundle exec fastlane release --verbose
         env:
           YTM_VERSION: ${{ github.event.inputs.version }}
           AC_NOTARIZE_EMAIL: ${{ secrets.AC_NOTARIZE_EMAIL }}
