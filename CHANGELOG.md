@@ -75,7 +75,7 @@ I hope the changes are well received and any feedback or bugs can be reported on
 
 * Initial version of YT Music wrapper
 
-[Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.0.6...HEAD
 [1.1.0]: https://github.com/steve228uk/YouTube-Music/compare/1.0.6...1.1.0
 [1.0.6]: https://github.com/steve228uk/YouTube-Music/compare/1.0.5...1.0.6
 [1.0.5]: https://github.com/steve228uk/YouTube-Music/compare/1.0.4...1.0.5
