@@ -71,7 +71,8 @@ class Fastfile: LaneFile {
                           value: newVersion,
                           path: infoPlistPath)
 
-        // Increment the build number in the plist (This is used by Sparkle)
+        // Increment the build number in the Xcode project
+        // (This is used by Sparkle to determine new versions)
         let newBuildNumber = incrementBuildNumber()
 
         // Build the app (All of the build settings are in the project)
@@ -102,7 +103,8 @@ class Fastfile: LaneFile {
         catch { fatalError("Unable to update Changelog \(error)") }
 
         // Commit all of the files we changed
-        gitCommit(path: ["YT Music/Supporting/Info.plist", "CHANGELOG.md", "Appcast.xml"],
+        gitCommit(path: ["YT Music/Supporting/Info.plist",
+                         "CHANGELOG.md", "Appcast.xml", "*.xcodeproj"],
                   message: "Release version \(newVersion)! 🎉")
 
         // Make a tag for this release
