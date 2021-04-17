@@ -59,6 +59,9 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+fastlane/swift
+fastlane/FastlaneRunner
+
 
 # Code Injection
 #
