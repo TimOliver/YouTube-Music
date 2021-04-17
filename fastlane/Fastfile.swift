@@ -164,11 +164,16 @@ extension Fastfile {
 
     /// Extract the signing identity from GitHub secrets and install it in our keychain
     func installSigningIdentity() {
-        // Decode the signing cert and save to disk
+        // Decode the signing cert from GitHub secrets
         let certificateString = environmentVariable(get: "SIGNING_CERT")
-        let data = Data(base64Encoded: certificateString, options: .ignoreUnknownCharacters)
+        guard let data = Data(base64Encoded: certificateString, options: .ignoreUnknownCharacters),
+              data.count > 0 else {
+            fatalError("Was unable to decode signing certificate")
+        }
+
+        // Save the decoded certificate to disk
         let certificateURL = URL(fileURLWithPath: "Certificate.p12")
-        do { try data?.write(to: certificateURL) }
+        do { try data.write(to: certificateURL) }
         catch { fatalError("Unable to save signing identity to disk") }
 
         // Import into the keychain
