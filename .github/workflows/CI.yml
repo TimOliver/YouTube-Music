@@ -1,7 +1,6 @@
 # Builds and releases a new build of the YouTube Music app
 
 name: New Release
-environment: Release
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -17,6 +16,9 @@ jobs:
   build:
     # Run on the latest version of macOS supported
     runs-on: macos-latest
+    
+    # Reference the environment where the secrets are stored
+    environment: Release
 
     steps:
       # Check out the repo with our CI bot's credentials
