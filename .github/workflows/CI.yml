@@ -33,7 +33,8 @@ jobs:
         uses: fregante/setup-git-user@v1
 
       # Execute fastlane release lane
-      - name: Run Fastlane
+      - name: Build and Publish Release
+        id: build-step
         run: bundle install && bundle exec fastlane swift init && bundle exec fastlane release --verbose
         env:
           NEW_VERSION: ${{ github.event.inputs.version }}
@@ -48,3 +49,13 @@ jobs:
           MATCH_KEYCHAIN_PASSWORD: ${{ secrets.MATCH_KEYCHAIN_PASSWORD }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
           FL_GITHUB_RELEASE_API_BEARER: ${{ secrets.GITHUB_TOKEN }}
+          
+      # Calculate and print a checksum of the final build artifact
+      - name: Print SHA-256 Checksum of Release
+        env:
+          FILE_NAME: ${{ steps.build-step.outputs.RELEASE_FILE_NAME }}
+        run: |
+              export SHA_256_HASH=`shasum -a 256 $FILE_NAME | awk '{ print $1 }'`
+              echo 'The SHA-256 hash for $FILE_NAME is $SHA_256_HASH'
+             
+             
