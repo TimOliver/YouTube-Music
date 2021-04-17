@@ -43,8 +43,6 @@ class Fastfile: LaneFile {
     func releaseLane() {
         desc("Build, sign, notarize and release a new version of this macOS app")
 
-        echo(message: "::set-output name=RELEASE_FILE_NAME::Test.zip")
-
         // Get the info we need from the environment
         let newVersion = getNewVersion(from: environmentVariable(get: "NEW_VERSION"))
 
@@ -101,7 +99,7 @@ class Fastfile: LaneFile {
            log: false)
 
         // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        echo(message: "::set-output name=RELEASE_FILE_NAME::\(archiveName)")
+        echo(message: "::set-output name=RELEASE_FILE_NAME::\"\(archiveName)\"")
 
         // Generate the Sparkle app cast for this new version
         do {
