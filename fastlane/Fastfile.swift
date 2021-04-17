@@ -91,7 +91,7 @@ class Fastfile: LaneFile {
             try updateAppCast(fileName: archiveName,
                                newVersion: newVersion,
                                changes: changelogChanges.changes)
-        } catch { fatalError("Unable to update Appcast.xml") }
+        } catch { fatalError("Unable to update Appcast.xml (\(error))") }
 
         // Update the CHANGELOG
         do { try updateChanglog(&changelog, newVersion: newVersion) }
