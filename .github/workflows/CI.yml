@@ -16,6 +16,9 @@ jobs:
   build:
     # Run on the latest version of macOS supported
     runs-on: macos-latest
+    
+    # Reference the environment where the secrets are stored
+    environment: Release
 
     steps:
       # Check out the repo with our CI bot's credentials
