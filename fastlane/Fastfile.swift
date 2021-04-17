@@ -43,8 +43,6 @@ class Fastfile: LaneFile {
     func releaseLane() {
         desc("Build, sign, notarize and release a new version of this macOS app")
 
-        echo(message: "::set-output name=release-name::YT-Music-1.1.0.zip")
-
         // Get the info we need from the environment
         let newVersion = getNewVersion(from: environmentVariable(get: "NEW_VERSION"))
 
@@ -83,6 +81,14 @@ class Fastfile: LaneFile {
         // (This is used by Sparkle to determine new versions)
         let newBuildNumber = incrementBuildNumber()
 
+        // Set up a formatted file name for the app name, and an escaped variant
+        let formattedAppName = binaryFileName.replacingOccurrences(of: " ", with: "-")
+        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\")
+        let archiveName = "\(formattedAppName)-\(newVersion).zip"
+
+        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
+        echo(message: "::set-output name=release-name::\(archiveName)")
+
         // Build the app (All of the build settings are in the project)
         buildMacApp(codesigningIdentity: environmentVariable(get: "CODESIGN_IDENTITY"),
                     exportMethod: "developer-id")
@@ -94,14 +100,8 @@ class Fastfile: LaneFile {
                  verbose: true)
 
         // Generate the final ZIP for the build
-        let formattedAppName = binaryFileName.replacingOccurrences(of: " ", with: "-")
-        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\")
-        let archiveName = "\(formattedAppName)-\(newVersion).zip"
         sh(command: "ditto -c -k --sequesterRsrc --keepParent \(escapedAppName).app \(archiveName)",
            log: false)
-
-        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        echo(message: "::set-output name=RELEASE_FILE_NAME::\"\(archiveName)\"")
 
         // Generate the Sparkle app cast for this new version
         do {
