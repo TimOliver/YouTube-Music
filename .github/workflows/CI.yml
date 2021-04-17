@@ -1,0 +1,40 @@
+# Builds and releases a new build of the YouTube Music app
+
+name: New Release
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Tag'     
+        required: true
+        default: '1.0.0'
+
+jobs:
+  build:
+    # Run on the latest version of macOS supported
+    runs-on: macos-latest
+
+    steps:
+      # Check out the repo with our CI bot's credentials
+      - name: Check out Repository
+        uses: actions/checkout@v2
+      
+      # Configure git credentials to be GitHub Actions bot
+      - name: Configure git credentials
+        uses: fregante/setup-git-user@v1
+
+      # Execute fastlane release lane
+      - name: Run Fastlane
+        run: bundle install && bundle fastlane swift init && bundle exec fastlane release --verbose
+        env:
+          YTM_VERSION: ${{ github.event.inputs.version }}
+          AC_NOTARIZE_EMAIL: ${{ secrets.AC_NOTARIZE_EMAIL }}
+          AC_NOTARIZE_TEAM: ${{ secrets.AC_NOTARIZE_TEAM }}
+          CODESIGN_IDENTITY: ${{ secrets.CODESIGN_IDENTITY }}
+          SIGNING_CERT: ${{ secrets.SIGNING_CERT }}
+          SIGNING_CERT_PASSWORD: ${{ secrets.SIGNING_CERT_PASSWORD }}
+          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}

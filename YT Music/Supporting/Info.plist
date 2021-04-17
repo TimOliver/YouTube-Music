@@ -39,5 +39,9 @@
 	<string>False</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/TimOliver/YouTube-Music/master/Appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>YO6tYoi/sR5BGkxKpy491X+KjFb8sgOPr4OTIEHGwu0=</string>
 </dict>
 </plist>
