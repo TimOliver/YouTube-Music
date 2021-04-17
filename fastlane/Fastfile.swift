@@ -28,6 +28,9 @@ class Fastfile: LaneFile {
     /// signing credentials are stored
     var keychainName: String { return "GitHubActions" }
 
+    /// The path to the app's Info.plist file
+    var infoPlistPath: String { return "YT Music/Supporting/Info.plist" }
+
     /// Runs a lane that goes takes a provided version number,
     /// updates the project files with that version number, and then
     /// builds, signs and releases a new copy of the app under that version
@@ -66,7 +69,10 @@ class Fastfile: LaneFile {
         // Bump the version in the Info.plist
         setInfoPlistValue(key: "CFBundleShortVersionString",
                           value: newVersion,
-                          path: "YT Music/Supporting/Info.plist")
+                          path: infoPlistPath)
+
+        // Increment the build number in the plist (This is used by Sparkle)
+        let newBuildNumber = incrementBuildNumber()
 
         // Build the app (All of the build settings are in the project)
         buildMacApp(codesigningIdentity: environmentVariable(get: "CODESIGN_IDENTITY"),
@@ -86,8 +92,9 @@ class Fastfile: LaneFile {
         // Generate the Sparkle app cast for this new version
         do {
             try updateAppCast(fileName: archiveName,
-                               newVersion: newVersion,
-                               changes: changelogChanges.changes)
+                              newBuildNumber: newBuildNumber,
+                              newVersion: newVersion,
+                              changes: changelogChanges.changes)
         } catch { fatalError("Unable to update Appcast.xml (\(error))") }
 
         // Update the CHANGELOG
@@ -215,6 +222,7 @@ extension Fastfile {
     ///   - changes: The changes in markdown as extracted from the changelog
     /// - Throws: Throws an error if any step of the process fails
     func updateAppCast(fileName: String,
+                       newBuildNumber: String,
                        newVersion: String,
                        changes: String?) throws {
         // Load the appcast file and insert the string
@@ -262,7 +270,7 @@ extension Fastfile {
                     <pubDate>\(dateString)</pubDate>
                     <sparkle:minimumSystemVersion>\(minimumSystemVersion)</sparkle:minimumSystemVersion>
                     <enclosure url="https://github.com/TimOliver/YouTube-Music/releases/download/\(newVersion)/\(fileName)"
-                    sparkle:version="8" sparkle:shortVersionString="\(newVersion)"
+                    sparkle:version="\(newBuildNumber)" sparkle:shortVersionString="\(newVersion)"
                     \(signature)
                     type="application/octet-stream"/>
                 </item>\n
