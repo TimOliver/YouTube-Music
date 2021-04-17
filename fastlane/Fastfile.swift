@@ -288,12 +288,17 @@ extension Fastfile {
             throw "Could not find '## [Unreleased]' in Changelog"
         }
 
+        // Calculate the current date and convert to string
+        let dateFormatter = DateFormatter()
+        dateFormatter.pattern = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: Date())
+
         // Insert the new release number under it
         // e.g
         // ## [Unreleased]
         //
         // ## [1.0.0]
-        changelog.insert(contentsOf: "\n## [\(newVersion)]\n",
+        changelog.insert(contentsOf: "\n## [\(newVersion)] - \(dateString)\n",
                          at: changelog.index(changelog.startIndex, offsetBy: NSMaxRange(unreleasedBlock)))
 
         // Update the links at the bottom of the changelog with the new version
