@@ -166,7 +166,7 @@ extension Fastfile {
 
         // Import into the keychain
         importCertificate(certificatePath: "Certificate.p12",
-                          certificatePassword: "Wee",
+                          certificatePassword: environmentVariable(get: "SIGNING_CERT_PASSWORD"),
                           keychainName: "\(keychainName)-db",
                           keychainPassword: environmentVariable(get: "MATCH_KEYCHAIN_PASSWORD"))
     }
