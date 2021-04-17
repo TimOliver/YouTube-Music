@@ -60,9 +60,6 @@ class Fastfile: LaneFile {
         // Install the Apple signing identity from GitHub secrets
         installSigningIdentity()
 
-        // Install Sparkle private key from GitHub secrets
-        installSparklePrivateKey()
-
         // Download and build Markdown to HTML utility
         prepareInkUtility()
 
@@ -183,17 +180,6 @@ extension Fastfile {
                           keychainPassword: environmentVariable(get: "MATCH_KEYCHAIN_PASSWORD"))
     }
 
-    func installSparklePrivateKey() {
-        // Export the key from Secrets to disk
-        let sparklePrivateKey = environmentVariable(get: "SPARKLE_PRIVATE_KEY")
-        let path = "key.pem"
-        do { try sparklePrivateKey.write(toFile: path, atomically: true, encoding: .utf8) }
-        catch { fatalError("Could not save Sparkle private key") }
-
-        // Import into the keychain
-        sh(command: "./Pods/Sparkle/bin/generate_keys -f \(path)", log: false)
-    }
-
     /// In order to convert Markdown to HTML, download and build a copy
     /// of John Sundell's Ink library, and build a copy.
     func prepareInkUtility() {
@@ -249,10 +235,8 @@ extension Fastfile {
 
 
         // Sign the ZIP file with Sparkle's private key
-        unlockKeychain(path: keychainName,
-                       password: environmentVariable(get: "MATCH_KEYCHAIN_PASSWORD"),
-                       setDefault: true)
-        let signature = sh(command: "./Pods/Sparkle/bin/sign_update \(fileName)",
+        let sparkleKey = environmentVariable(get: "SPARKLE_PRIVATE_KEY")
+        let signature = sh(command: "./Pods/Sparkle/bin/sign_update -s \(sparkleKey) \(fileName)",
                            log: false).trimmingCharacters(in: .whitespacesAndNewlines)
 
         // Convert the changes from markdown to HTML using Ink
