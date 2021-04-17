@@ -43,6 +43,8 @@ class Fastfile: LaneFile {
     func releaseLane() {
         desc("Build, sign, notarize and release a new version of this macOS app")
 
+        echo(message: "::set-output name=RELEASE_FILE_NAME::Test.zip")
+
         // Get the info we need from the environment
         let newVersion = getNewVersion(from: environmentVariable(get: "NEW_VERSION"))
 
