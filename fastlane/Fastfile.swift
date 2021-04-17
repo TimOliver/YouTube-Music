@@ -98,6 +98,9 @@ class Fastfile: LaneFile {
         sh(command: "ditto -c -k --sequesterRsrc --keepParent \(escapedAppName).app \(archiveName)",
            log: false)
 
+        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
+        echo(message: "::set-output name=RELEASE_FILE_NAME::\(archiveName)")
+
         // Generate the Sparkle app cast for this new version
         do {
             try updateAppCast(fileName: archiveName,
