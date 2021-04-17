@@ -29,16 +29,22 @@ class Fastfile: LaneFile {
     var keychainName: String { return "GitHubActions" }
 
     /// The path to the app's Info.plist file
-    var infoPlistPath: String { return "YT Music/Supporting/Info.plist" }
+    var infoPlistPath: String { return environmentVariable(get: "INFO_PLIST_PATH") }
+
+    /// The owner and name of this repository (eg octocat/repo)
+    var repositoryName: String { return environmentVariable(get: "GITHUB_REPOSITORY") }
+
+    /// The name of the final binary without the .app extension (eg MyApp.app)
+    var binaryFileName: String { return environmentVariable(get: "BINARY_FILE_NAME") }
 
     /// Runs a lane that goes takes a provided version number,
     /// updates the project files with that version number, and then
     /// builds, signs and releases a new copy of the app under that version
     func releaseLane() {
-        desc("Build, sign, notarize and release a new version of YouTube Music")
+        desc("Build, sign, notarize and release a new version of this macOS app")
 
         // Get the info we need from the environment
-        let newVersion = getNewVersion(from: environmentVariable(get: "YTM_VERSION"))
+        let newVersion = getNewVersion(from: environmentVariable(get: "NEW_VERSION"))
 
         // Load the changelog text
         let changelogURL = URL(fileURLWithPath: changelogPath)
@@ -80,14 +86,16 @@ class Fastfile: LaneFile {
                     exportMethod: "developer-id")
 
         // Notarize and staple the app
-        notarize(package: "YT Music.app",
+        notarize(package: "\(binaryFileName).app",
                  username: environmentVariable(get: "AC_NOTARIZE_EMAIL"),
                  ascProvider: environmentVariable(get: "AC_NOTARIZE_TEAM"),
                  verbose: true)
 
         // Generate the final ZIP for the build
-        let archiveName = "YT-Music-\(newVersion).zip"
-        sh(command: "ditto -c -k --sequesterRsrc --keepParent YT\\ Music.app \(archiveName)",
+        let formattedAppName = binaryFileName.replacingOccurrences(of: " ", with: "-")
+        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\")
+        let archiveName = "\(formattedAppName)-\(newVersion).zip"
+        sh(command: "ditto -c -k --sequesterRsrc --keepParent \(escapedAppName).app \(archiveName)",
            log: false)
 
         // Generate the Sparkle app cast for this new version
@@ -103,7 +111,7 @@ class Fastfile: LaneFile {
         catch { fatalError("Unable to update Changelog \(error)") }
 
         // Commit all of the files we changed
-        gitCommit(path: ["YT Music/Supporting/Info.plist",
+        gitCommit(path: [infoPlistPath,
                          "CHANGELOG.md", "Appcast.xml", "*.xcodeproj"],
                   message: "Release version \(newVersion)! 🎉")
 
@@ -114,10 +122,10 @@ class Fastfile: LaneFile {
         pushToGitRemote()
 
         // Push GitHub Release
-        setGithubRelease(repositoryName: "TimOliver/YouTube-Music",
+        setGithubRelease(repositoryName: repositoryName,
                          tagName: newVersion,
                          name: newVersion,
-                         description: changelogChanges.changes,
+                         description: formattedReleaseChanges(changelogChanges.changes),
                          uploadAssets: [archiveName])
 	}
 }
@@ -240,7 +248,7 @@ extension Fastfile {
 
         // Fetch the minimum supported version of macOS in this build
         let minimumSystemVersion = getInfoPlistValue(key: "LSMinimumSystemVersion",
-                                                     path: "YT Music.app/Contents/Info.plist")
+                                                     path: infoPlistPath)
 
 
         // Sign the ZIP file with Sparkle's private key
@@ -271,7 +279,7 @@ extension Fastfile {
                     </description>
                     <pubDate>\(dateString)</pubDate>
                     <sparkle:minimumSystemVersion>\(minimumSystemVersion)</sparkle:minimumSystemVersion>
-                    <enclosure url="https://github.com/TimOliver/YouTube-Music/releases/download/\(newVersion)/\(fileName)"
+                    <enclosure url="https://github.com/\(repositoryName)/releases/download/\(newVersion)/\(fileName)"
                     sparkle:version="\(newBuildNumber)" sparkle:shortVersionString="\(newVersion)"
                     \(signature)
                     type="application/octet-stream"/>
@@ -317,13 +325,24 @@ extension Fastfile {
                          at: changelog.index(changelog.startIndex, offsetBy: NSMaxRange(linkRanges[0])))
 
         // Update the unreleased block with the new version
-        // eg [Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.0.6...HEAD
+        // eg [Unreleased]: https://github.com/octocat/repo/compare/1.0.6...HEAD
         // to
-        // [Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.1.0...HEAD
+        // [Unreleased]: https://github.com/octocat/repo/compare/1.1.0...HEAD
         changelog.replaceSubrange(Range(linkRanges[2], in: changelog)!, with: newVersion)
 
         // Write this new changelog back to disk
         try changelog.write(toFile: changelogPath, atomically: true, encoding: .utf8)
+    }
+
+    /// Formats the changes from the changelog for the notes section in GitHub Releeases
+    /// - Parameter changes: The new changes that were extracted from the changelog
+    /// - Returns: The formatted changes ready for GitHub Releases
+    func formattedReleaseChanges(_ changes: String) -> String {
+        // Extract the ID of the GitHub job running this flow, and attach it to the Release notes
+        let domainName = environmentVariable(get: "GITHUB_SERVER_URL")
+        let runID = environmentVariable(get: "GITHUB_RUN_ID")
+        let buildJobURL = "\(domainName)/\(repositoryName)/actions/run/\(runID)"
+        return changes + "\n\n#\n\n###### [Release Workflow Job (#\(runID))](\(buildJobURL))"
     }
 }
 
