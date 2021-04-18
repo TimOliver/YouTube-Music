@@ -257,7 +257,7 @@ extension Fastfile {
 
         // Fetch the minimum supported version of macOS in this build
         let minimumSystemVersion = getInfoPlistValue(key: "LSMinimumSystemVersion",
-                                                     path: infoPlistPath)
+                                                     path: "\(binaryFileName).app/Contents/Info.plist")
 
 
         // Sign the ZIP file with Sparkle's private key
