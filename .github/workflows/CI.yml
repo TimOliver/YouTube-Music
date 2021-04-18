@@ -52,6 +52,7 @@ jobs:
           
       # Calculate and print a checksum of the final build artifact
       - name: Print SHA-256 Checksum of Release
-        run: echo 'The SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}'
+        run: |
+              echo 'The SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}'
              
              
