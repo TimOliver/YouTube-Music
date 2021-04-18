@@ -134,7 +134,7 @@ class Fastfile: LaneFile {
         echo(message: "::set-output name=release-artifact-name::\(archiveName)")
 
         // Generate a SHA-256 hash of the artifact and also expose that
-        let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'")
+        let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'", log: false)
         echo(message: "::set-output name=release-artifact-hash::\(shaHash)")
 	}
 }
@@ -350,7 +350,7 @@ extension Fastfile {
         // Extract the ID of the GitHub job running this flow, and attach it to the Release notes
         let domainName = environmentVariable(get: "GITHUB_SERVER_URL")
         let runID = environmentVariable(get: "GITHUB_RUN_ID")
-        let buildJobURL = "\(domainName)/\(repositoryName)/actions/run/\(runID)"
+        let buildJobURL = "\(domainName)/\(repositoryName)/actions/runs/\(runID)?check_suite_focus=true"
         return changes + "\n\n#\n\n###### [Release Workflow Job (#\(runID))](\(buildJobURL))"
     }
 }
