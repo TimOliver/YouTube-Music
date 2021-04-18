@@ -93,7 +93,7 @@ class Fastfile: LaneFile {
 
         // Set up a formatted file name for the app name, and an escaped variant
         let formattedAppName = binaryFileName.replacingOccurrences(of: " ", with: "-")
-        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\")
+        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\ ")
         let archiveName = "\(formattedAppName)-\(newVersion).zip"
 
         // Generate the final ZIP for the build
