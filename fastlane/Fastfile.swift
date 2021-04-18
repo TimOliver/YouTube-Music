@@ -131,11 +131,11 @@ class Fastfile: LaneFile {
                          uploadAssets: [archiveName])
 
         // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        echo(message: "::set-output name=release-artifact-name::\(archiveName)")
+        sh(command: "echo '::set-output name=release-artifact-name::\(archiveName)'")
 
         // Generate a SHA-256 hash of the artifact and also expose that
         let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'", log: false)
-        echo(message: "::set-output name=release-artifact-hash::\(shaHash)")
+        sh(command: "echo '::set-output name=release-artifact-hash::\(shaHash)'")
 	}
 }
 
