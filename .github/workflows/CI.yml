@@ -34,8 +34,8 @@ jobs:
 
       # Execute fastlane release lane
       - name: Build and Publish Release
+        run: bundle install && bundle exec fastlane release
         id: build-step
-        run: bundle install && bundle exec fastlane swift init && bundle exec fastlane release --verbose
         env:
           NEW_VERSION: ${{ github.event.inputs.version }}
           INFO_PLIST_PATH: 'YT Music/Supporting/Info.plist'
@@ -52,6 +52,6 @@ jobs:
           
       # Calculate and print a checksum of the final build artifact
       - name: Print SHA-256 Checksum of Release
-        run: echo 'The SHA-256 hash for ${{ env.ARTIFACT_NAME }} is ${{ env.ARTIFACT_HASH }}'
+        run: echo 'The SHA-256 hash for ${{ steps.build-step.outputs.artifact-name }} is ${{ steps.build-step.outputs.artifact-hash }}'
              
              
