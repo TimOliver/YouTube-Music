@@ -43,8 +43,8 @@ class Fastfile: LaneFile {
     func releaseLane() {
         desc("Build, sign, notarize and release a new version of this macOS app")
 
-        sh(command: "echo '::set-output name=artifact-name::YouTube.zip'", log: false)
-        sh(command: "echo '::set-output name=artifact-hash::000000'", log: false)
+        puts(message: "::set-output name=artifact-name::YouTube.zip")
+        puts(message: "::set-output name=artifact-hash::000000")
         return
 
         // Get the info we need from the environment
