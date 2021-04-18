@@ -54,6 +54,6 @@ jobs:
       - name: Print SHA-256 Checksum of Release
         run: |
               :
-              echo -e "\033[32;1mThe SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}\033[0m"
+              echo -e "\033[32;1mThe SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}.\033[0m"
              
              
