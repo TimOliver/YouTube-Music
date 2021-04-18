@@ -130,12 +130,12 @@ class Fastfile: LaneFile {
                          description: formattedReleaseChanges(changelogChanges.changes),
                          uploadAssets: [archiveName])
 
-        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        sh(command: "echo '::set-output name=release-artifact-name::\(archiveName)'")
-
         // Generate a SHA-256 hash of the artifact and also expose that
-        let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'", log: false)
-        sh(command: "echo '::set-output name=release-artifact-hash::\(shaHash)'")
+        let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'",
+                         log: false).trimmingCharacters(in: .whitespacesAndNewlines)
+
+        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
+        environmentVariable(set: ["ARTIFACT_NAME": archiveName, "ARTIFACT_HASH": shaHash])
 	}
 }
 
