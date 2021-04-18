@@ -43,10 +43,6 @@ class Fastfile: LaneFile {
     func releaseLane() {
         desc("Build, sign, notarize and release a new version of this macOS app")
 
-        sh(command: "echo \"artifact_name=GitHub.zip\" >> $GITHUB_ENV", log: false)
-        sh(command: "echo \"artifact_hash=0000000000\" >> $GITHUB_ENV", log: false)
-        return
-
         // Get the info we need from the environment
         let newVersion = getNewVersion(from: environmentVariable(get: "NEW_VERSION"))
 
@@ -139,7 +135,8 @@ class Fastfile: LaneFile {
                          log: false).trimmingCharacters(in: .whitespacesAndNewlines)
 
         // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        environmentVariable(set: ["ARTIFACT_NAME": archiveName, "ARTIFACT_HASH": shaHash])
+        sh(command: "echo \"artifact_name=\(archiveName)\" >> $GITHUB_ENV", log: false)
+        sh(command: "echo \"artifact_hash=\(shaHash)\" >> $GITHUB_ENV", log: false)
 	}
 }
 
