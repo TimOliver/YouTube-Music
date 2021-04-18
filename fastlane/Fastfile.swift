@@ -114,7 +114,7 @@ class Fastfile: LaneFile {
 
         // Commit all of the files we changed
         gitCommit(path: [infoPlistPath,
-                         "CHANGELOG.md", "Appcast.xml", "./*.xcodeproj"],
+                         "CHANGELOG.md", "Appcast.xml", "*.pbxproj"],
                   message: "Release version \(newVersion)! 🎉")
 
         // Make a tag for this release
