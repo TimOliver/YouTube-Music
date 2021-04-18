@@ -34,7 +34,7 @@ jobs:
 
       # Execute fastlane release lane
       - name: Build and Publish Release
-        run: bundle install && bundle exec fastlane release
+        run: bundle install && bundle exec fastlane swift init && bundle exec fastlane release
         id: build-step
         env:
           NEW_VERSION: ${{ github.event.inputs.version }}
