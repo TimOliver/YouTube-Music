@@ -55,6 +55,6 @@ jobs:
         run: |
               :
               echo '::echo::off'
-              echo '\u001b[32mThe SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}'
+              echo -e '\u001b[32mThe SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}'
              
              
