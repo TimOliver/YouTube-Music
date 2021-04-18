@@ -81,14 +81,6 @@ class Fastfile: LaneFile {
         // (This is used by Sparkle to determine new versions)
         let newBuildNumber = incrementBuildNumber()
 
-        // Set up a formatted file name for the app name, and an escaped variant
-        let formattedAppName = binaryFileName.replacingOccurrences(of: " ", with: "-")
-        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\")
-        let archiveName = "\(formattedAppName)-\(newVersion).zip"
-
-        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
-        echo(message: "::set-output name=release-file-name::\(archiveName)")
-
         // Build the app (All of the build settings are in the project)
         buildMacApp(codesigningIdentity: environmentVariable(get: "CODESIGN_IDENTITY"),
                     exportMethod: "developer-id")
@@ -98,6 +90,11 @@ class Fastfile: LaneFile {
                  username: environmentVariable(get: "AC_NOTARIZE_EMAIL"),
                  ascProvider: environmentVariable(get: "AC_NOTARIZE_TEAM"),
                  verbose: true)
+
+        // Set up a formatted file name for the app name, and an escaped variant
+        let formattedAppName = binaryFileName.replacingOccurrences(of: " ", with: "-")
+        let escapedAppName = binaryFileName.replacingOccurrences(of: " ", with: "\\")
+        let archiveName = "\(formattedAppName)-\(newVersion).zip"
 
         // Generate the final ZIP for the build
         sh(command: "ditto -c -k --sequesterRsrc --keepParent \(escapedAppName).app \(archiveName)",
@@ -132,6 +129,13 @@ class Fastfile: LaneFile {
                          name: newVersion,
                          description: formattedReleaseChanges(changelogChanges.changes),
                          uploadAssets: [archiveName])
+
+        // Expose the archive file name to GitHub Actions so we can access it in subsequent steps
+        echo(message: "::set-output name=release-artifact-name::\(archiveName)")
+
+        // Generate a SHA-256 hash of the artifact and also expose that
+        let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'")
+        echo(message: "::set-output name=release-artifact-hash::\(shaHash)")
 	}
 }
 
